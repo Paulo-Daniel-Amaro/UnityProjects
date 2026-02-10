@@ -1,0 +1,121 @@
+using System.Linq.Expressions;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class Andar : MonoBehaviour
+
+{
+
+    public float velocidade;
+
+    public Vector2 dir;
+
+    public Rigidbody2D rb2d;
+
+    public float JumpForce;
+
+    public bool chao;
+
+    public int vida;
+
+    // Start is called before the first frame update
+
+    void Start()
+
+    {
+
+    }
+
+    // Update is called once per frame
+
+    void Update()
+
+    {
+
+        if (Input.GetKey(KeyCode.D))
+
+        {
+
+            dir = new Vector2(+1 * velocidade, rb2d.velocity.y);
+
+
+        }
+
+        else if (Input.GetKey(KeyCode.A))
+
+        {
+
+            dir = new Vector2(-1 * velocidade, rb2d.velocity.y);
+
+    
+
+        }
+
+        else
+
+        {
+
+            dir = new Vector2(0 * velocidade, rb2d.velocity.y);
+
+        }
+
+        dir = new Vector2(dir.x, rb2d.velocity.y);
+
+        rb2d.velocity = dir;
+
+        if (Input.GetKeyDown(KeyCode.W))
+
+        {
+            if (chao == true)
+            {
+                rb2d.AddForce(new Vector2(rb2d.velocity.x, JumpForce));
+              
+            }
+        }
+
+ 
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chao"))
+        {
+            chao = true;
+
+        }
+        else if (collision.gameObject.CompareTag("inimigo"))
+        {
+            TmDano(collision.gameObject.GetComponent<Inimigo>().dano);
+            Destroy(collision.gameObject);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chao"))
+        {
+            chao = false;
+            
+        }
+        else if (collision.gameObject.CompareTag("coin"))
+        {
+            coin();
+            Destroy(collision.gameObject);
+        }
+    }
+    public void TmDano(int dano)
+    {
+        vida -= dano;
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void coin()
+    {
+        Destroy(this.gameObject);
+    }
+
+}
+
+
+

@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 85698450}
   - component: {fileID: 85698449}
   - component: {fileID: 85698452}
+  - component: {fileID: 85698453}
   m_Layer: 0
-  m_Name: Circle (2)
+  m_Name: Coin2
   m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +238,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -253,6 +254,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &85698453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85698448}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +384,7 @@ GameObject:
   - component: {fileID: 525580712}
   - component: {fileID: 525580711}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: enemywall
   m_TagString: md
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,8 +463,8 @@ GameObject:
   - component: {fileID: 568854294}
   - component: {fileID: 568854293}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: "ch\xE3o2"
+  m_TagString: chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,6 +825,7 @@ MonoBehaviour:
   JumpForce: 500
   chao: 0
   vida: 56
+  coins: 0
 --- !u!50 &670044829
 Rigidbody2D:
   serializedVersion: 4
@@ -950,8 +979,8 @@ GameObject:
   - component: {fileID: 695461522}
   - component: {fileID: 695461521}
   m_Layer: 0
-  m_Name: Square (1)
-  m_TagString: Untagged
+  m_Name: "Ch\xE3o3"
+  m_TagString: chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1106,8 +1135,9 @@ GameObject:
   - component: {fileID: 788937354}
   - component: {fileID: 788937353}
   - component: {fileID: 788937357}
+  - component: {fileID: 788937358}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: Coin1
   m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,7 +1239,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1225,6 +1255,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &788937358
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788937352}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1163479451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1451,7 @@ GameObject:
   - component: {fileID: 1204871803}
   - component: {fileID: 1204871802}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: enemywall
   m_TagString: md
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1471,8 +1528,9 @@ GameObject:
   - component: {fileID: 1688516095}
   - component: {fileID: 1688516094}
   - component: {fileID: 1688516098}
+  - component: {fileID: 1688516099}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Coin
   m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1574,7 +1632,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1590,6 +1648,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1688516099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688516093}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1757435458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,8 +1686,9 @@ GameObject:
   - component: {fileID: 1757435460}
   - component: {fileID: 1757435459}
   - component: {fileID: 1757435463}
+  - component: {fileID: 1757435464}
   m_Layer: 0
-  m_Name: Circle (3)
+  m_Name: Coin3
   m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1704,7 +1790,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1720,6 +1806,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1757435464
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757435458}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

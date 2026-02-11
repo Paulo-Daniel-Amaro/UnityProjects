@@ -18,6 +18,8 @@ public class Andar : MonoBehaviour
 
     public int vida;
 
+    public int coins=0;
+
     // Start is called before the first frame update
 
     void Start()
@@ -88,6 +90,7 @@ public class Andar : MonoBehaviour
             TmDano(collision.gameObject.GetComponent<Inimigo>().dano);
             Destroy(collision.gameObject);
         }
+       
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -96,9 +99,13 @@ public class Andar : MonoBehaviour
             chao = false;
             
         }
-        else if (collision.gameObject.CompareTag("coin"))
+   
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+          if (collision.gameObject.CompareTag("coin"))
         {
-            coin();
+            coins = coins + 1;
             Destroy(collision.gameObject);
         }
     }
@@ -110,10 +117,7 @@ public class Andar : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void coin()
-    {
-        Destroy(this.gameObject);
-    }
+
 
 }
 

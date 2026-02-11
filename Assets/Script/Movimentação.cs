@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,12 +21,17 @@ public class Andar : MonoBehaviour
 
     public int coins=0;
 
+    public TextMeshProUGUI TextoMoedas;
+
+    public TextMeshProUGUI vidatexto;
+
     // Start is called before the first frame update
 
     void Start()
 
     {
-
+        TextoMoedas.text = "Coins : " + coins;
+        vidatexto.text = "Vidas :" + vida;
     }
 
     // Update is called once per frame
@@ -107,6 +113,7 @@ public class Andar : MonoBehaviour
         {
             coins = coins + 1;
             Destroy(collision.gameObject);
+            TextoMoedas.text = "Coins : " + coins;
         }
     }
     public void TmDano(int dano)
@@ -115,6 +122,11 @@ public class Andar : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
+            vidatexto.text = "Vidas : " + vida;
+        }
+        else
+        {
+            vidatexto.text = "Vidas :"+ vida;
         }
     }
 
